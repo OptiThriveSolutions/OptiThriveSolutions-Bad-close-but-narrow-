@@ -184,7 +184,7 @@
     /* Hero Section with Pulsing Button */
     .hero {
       background: radial-gradient(circle at center, #F5F5DC 0%, #D4BEA8 100%);
-      padding: 8rem 0;
+      padding: 12rem 0;
       text-align: center;
       position: relative;
       border-bottom: 1px solid rgba(47, 79, 79, 0.1);
@@ -225,7 +225,7 @@
       background: #F5F5DC;
       border: 1px solid transparent;
       border-radius: 1rem;
-      padding: 2.5rem;
+      padding: 3rem;
       transition: transform 0.5s ease, box-shadow 0.5s ease;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       animation: bounceIn 1s ease;
@@ -306,8 +306,8 @@
     }
     /* Section Styling with Enhanced Differentiation */
     .section {
-      padding: 8rem 2rem;
-      min-height: 100vh;
+      padding: 6rem 2rem;
+      min-height: 90vh;
       position: relative;
       overflow: hidden;
       border-bottom: 2px solid #2F4F4F;
@@ -423,7 +423,6 @@
       transition: all 0.3s ease;
       border-radius: 0.75rem;
       padding: 1rem;
-      width: 100%;
     }
     input:focus, textarea:focus {
       border: 1px solid #2F4F4F;
@@ -453,7 +452,7 @@
     }
     .modal-content {
       background: #F5F5DC;
-      padding: 2rem 3rem;
+      padding: 3rem 4rem;
       border-radius: 1rem;
       width: 90%;
       max-width: 500px;
@@ -522,7 +521,8 @@
         font-size: 3rem;
       }
       .section {
-        padding: 4rem 1rem;
+        padding: 3rem 1rem;
+        min-height: 80vh;
       }
       .modal-content {
         padding: 2rem 3rem;
@@ -547,7 +547,7 @@
   <!-- Floating Navigation -->
   <nav>
     <div class="flex items-center pl-4">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 56' width='280' height='56'%3E%3Cdefs%3E%3CradialGradient id='globeGradient' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' style='stop-color:%23E0F7FA;stop-opacity:0.9'/%3E%3Cstop offset='50%25' style='stop-color:%234682B4;stop-opacity:0.8'/%3E%3Cstop offset='100%25' style='stop-color:%234682B4;stop-opacity:0.6'/%3E%3C/radialGradient%3E%3CradialGradient id='highlightGradient' cx='30%25' cy='30%25' r='50%25'%3E%3Cstop offset='0%25' style='stop-color:%23FFFFFF;stop-opacity:0.5'/%3E%3Cstop offset='100%25' style='stop-color:%23FFFFFF;stop-opacity:0'/%3E%3C/radialGradient%3E%3CradialGradient id='continentGradient' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' style='stop-color:%232E8B57;stop-opacity:0.9'/%3E%3Cstop offset='100%25' style='stop-color:%233CB371;stop-opacity:0.7'/%3E%3C/radialGradient%3E%3CradialGradient id='leafGradient' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' style='stop-color:%232E8B57;stop-opacity:0.9'/%3E%3Cstop offset='100%25' style='stop-color:%2366CDAA;stop-opacity:0.7'/%3E%3C/radialGradient%3E%3CradialGradient id='glowGradient' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' style='stop-color:%23FFD54F;stop-opacity:0.3'/%3E%3Cstop offset='100%25' style='stop-color:%23FFD54F;stop-opacity:0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cg transform='translate(28, 28)'%3E%3Ccircle cx='0' cy='0' r='26' fill='url(%23globeGradient)'/%3E%3Cg class='globe' transform='rotate(23.5)'%3E%3Ccircle cx='0' cy='0' r='24' fill='url(%23globeGradient)' filter='drop-shadow(1px 1px 2px rgba(0,0,0,0.3))'/%3E%3Ccircle cx='0' cy='0' r='24' fill='url(%23highlightGradient)'/%3E%3Cpath d='M-12 -8 Q-10 -5 -8 -6 Q-7 -3 -5 -4 Q-3 -1 -1 -2 Q0 0 2 -2 Q4 -1 6 -4 Q8 -3 10 -6 Q12 -5 14 -8 Q13 -10 11 -11 Q9 -12 7 -10 Q5 -9 3 -11 Q1 -12 -1 -11 Q-3 -9 -5 -10 Q-7 -12 -9 -11 Q-11 -10 -12 -8 M-15 2 Q-13 5 -11 4 Q-9 7 -7 6 Q-5 9 -3 8 Q-1 10 1 9 Q3 10 5 8 Q7 9 9 7 Q11 8 13 6 Q15 7 16 5 Q14 3 12 2 Q10 1 8 3 Q6 2 4 1 Q2 0 0 1 Q-2 2 -4 1 Q-6 0 -8 1 Q-10 2 -12 3 Q-14 4 -15 2 M-16 12 Q-14 15 -12 14 Q-10 17 -8 16 Q-6 19 -4 18 Q-2 21 0 20 Q2 21 4 20 Q6 19 8 18 Q10 17 12 16 Q14 15 16 14 Q15 12 13 11 Q11 10 9 12 Q7 11 5 10 Q3 9 1 10 Q-1 11 -3 12 Q-5 13 -7 14 Q-9 15 -11 14 Q-13 13 -15 12 M8 19 Q10 22 12 21 Q14 22 16 21 Q15 19 13 18 Q11 17 9 18 Q8 19 8 19' fill='url(%23continentGradient)' stroke='%234682B4' stroke-width='0.5'/%3E%3C/g%3E%3Cpath class='orbit-ring' d='M0 0 m-26,0 a26,26 0 1,0 52,0 a26,26 0 1,0 -52,0' fill='none' stroke='%23FFE87C' stroke-width='1' stroke-opacity='0.8'/%3E%3Cg transform='translate(0, -12) scale(1.5)'%3E%3Cpath d='M0 -12 V0' fill='none' stroke='%234682B4' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M-10 -12 Q-5 -16 0 -12 Q5 -16 10 -12 Q0 -10 -10 -12 M-8 -10 Q-4 -14 0 -10 Q4 -14 8 -10 Q0 -8 -8 -10 M-6 -8 Q-3 -12 0 -8 Q3 -12 6 -8 Q0 -6 -6 -8 M-4 -6 Q-2 -10 0 -6 Q2 -10 4 -6 Q0 -4 -4 -6' fill='url(%23leafGradient)' filter='drop-shadow(0 0 2px %23FFD54F)'/%3E%3C/g%3E%3Ccircle cx='0' cy='0' r='26' fill='url(%23glowGradient)'/%3E%3C/g%3E%3Cg transform='translate(60, 34)'%3E%3Ctext x='0' y='0' font-family='Montserrat, sans-serif' font-size='26' font-weight='700' fill='%231A2E2E' filter='drop-shadow(0 1px 1px %23FFD54F)' letter-spacing='1px'%3EOptiThrive%3C/text%3E%3Ctext x='120' y='0' font-family='Playfair Display, serif' font-size='24' font-weight='500' fill='%234682B4' filter='drop-shadow(0 1px 1px %23FFD54F)' letter-spacing='2px'%3ESolutions%3C/text%3E%3C/g%3E%3C/svg%3E" alt="OptiThrive Solutions Logo" class="logo">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 56' width='280' height='56'%3E%3Cdefs%3E%3CradialGradient id='globeGradient' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' style='stop-color:%23E0F7FA;stop-opacity:0.9'/%3E%3Cstop offset='50%25' style='stop-color:%234682B4;stop-opacity:0.8'/%3E%3Cstop offset='100%25' style='stop-color:%234682B4;stop-opacity:0.6'/%3E%3C/radialGradient%3E%3CradialGradient id='highlightGradient' cx='30%25' cy='30%25' r='50%25'%3E%3Cstop offset='0%25' style='stop-color:%23FFFFFF;stop-opacity:0.5'/%3E%3Cstop offset='100%25' style='stop-color:%23FFFFFF;stop-opacity:0'/%3E%3C/radialGradient%3E%3CradialGradient id='continentGradient' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' style='stop-color:%232E8B57;stop-opacity:0.9'/%3E%3Cstop offset='100%25' style='stop-color:%233CB371;stop-opacity:0.7'/%3E%3C/radialGradient%3E%3CradialGradient id='leafGradient' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' style='stop-color:%232E8B57;stop-opacity:0.9'/%3E%3Cstop offset='100%25' style='stop-color:%2366CDAA;stop-opacity:0.7'/%3E%3C/radialGradient%3E%3CradialGradient id='glowGradient' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' style='stop-color:%23FFD54F;stop-opacity:0.3'/%3E%3Cstop offset='100%25' style='stop-color:%23FFD54F;stop-opacity:0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cg transform='translate(28, 28)'%3E%3Ccircle cx='0' cy='0' r='26' fill='url(%23globeGradient)'/%3E%3Cg class='globe' transform='rotate(23.5)'%3E%3Ccircle cx='0' cy='0' r='24' fill='url(%23globeGradient)' filter='drop-shadow(1px 1px 2px rgba(0,0,0,0.3))'/%3E%3Ccircle cx='0' cy='0' r='24' fill='url(%23highlightGradient)'/%3E%3Cpath d='M-12 -8 Q-10 -5 -8 -6 Q-7 -3 -5 -4 Q-3 -1 -1 -2 Q0 0 2 -2 Q4 -1 6 -4 Q8 -3 10 -6 Q12 -5 14 -8 Q13 -10 11 -11 Q9 -12 7 -10 Q5 -9 3 -11 Q1 -12 -1 -11 Q-3 -9 -5 -10 Q-7 -12 -9 -11 Q-11 -10 -12 -8 M-15 2 Q-13 5 -11 4 Q-9 7 -7 6 Q-5 9 -3 8 Q-1 10 1 9 Q3 10 5 8 Q7 9 9 7 Q11 8 13 6 Q15 7 16 5 Q14 3 12 2 Q10 1 8 3 Q6 2 4 1 Q2 0 0 1 Q-2 2 -4 1 Q-6 0 -8 1 Q-10 2 -12 3 Q-14 4 -15 2 M-16 12 Q-14 15 -12 14 Q-10 17 -8 16 Q-6 19 -4 18 Q-2 21 0 20 Q2 21 4 20 Q6 19 8 18 Q10 17 12 16 Q14 15 16 14 Q15 12 13 11 Q11 10 9 12 Q7 11 5 10 Q3 9 1 10 Q-1 11 -3 12 Q-5 13 -7 14 Q-9 15 -11 14 Q-13 13 -15 12 M8 19 Q10 22 12 21 Q14 22 16 21 Q15 19 13 18 Q11 17 9 18 Q8 19 8 19' fill='url(%23continentGradient)' stroke='%234682B4' stroke-width='0.5'/%3E%3C/g%3E%3Cpath class='orbit-ring' d='M0 0 m-26,0 a26,26 0 1,0 52,0 a26,26 0 1,0 -52,0' fill='none' stroke='%23FFE87C' stroke-width='1' stroke-opacity='0.8'/%3E%3Cg transform='translate(0, -12) scale(1.5)'%3E%3Cpath d='M0 -12 V0' fill='none' stroke='%234682B4' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M-10 -12 Q-5 -16 0 -12 Q5 -16 10 -12 Q0 -10 -10 -12 M-8 -10 Q-4 -14 0 -10 Q4 -14 8 -10 Q0 -8 -8 -10 M-6 -8 Q-3 -12 0 -8 Q3 -12 6 -8 Q0 -6 -6 -8 M-4 -6 Q-2 -10 0 -6 Q2 -10 4 -6 Q0 -4 -4 -6' fill='url(%23leafGradient)' filter='drop-shadow(0 0 2px %23FFD54F)'/%3E%3C/g%3E%3Ccircle cx='0' cy='0' r='26' fill='url(%23glowGradient)'/%3E%3C/g%3E%3Cg transform='translate(60, 34)'%3E%3Ctext x='0' y='0' font-family='Montserrat, sans-serif' font-size='26' font-weight='700' fill='%231A2E2E' filter='drop-shadow(0 1px 1px %23FFD54F)'%3EOptiThrive%3C/text%3E%3Ctext x='120' y='0' font-family='Playfair Display, serif' font-size='24' font-weight='500' fill='%234682B4' filter='drop-shadow(0 1px 1px %23FFD54F)'%3ESolutions%3C/text%3E%3C/g%3E%3C/svg%3E" alt="OptiThrive Solutions Logo" class="logo">
     </div>
     <ul class="nav-links pr-4 flex space-x-6">
       <li><a href="#home" class="hover:text-FFE87C transition-colors">Home</a></li>
@@ -571,9 +571,9 @@
   <!-- Services Section -->
   <section id="services" class="section">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-up">Our Expert Services</h2>
-      <p class="text-lg mb-8 max-w-2xl mx-auto fade-in-text" data-aos="fade-up" data-aos-delay="100">We deliver precision-engineered solutions for any entity, utilizing cutting-edge strategies to maximize efficiency and savings. Compensation is tied solely to the results we achieve.</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-up">Our Expert Services</h2>
+      <p class="text-lg mb-12 max-w-2xl mx-auto fade-in-text" data-aos="fade-up" data-aos-delay="100">We deliver precision-engineered solutions for any entity, utilizing cutting-edge strategies to maximize efficiency and savings. Compensation is tied solely to the results we achieve.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div class="card" data-aos="fade-right" data-aos-delay="200">
           <div class="card-content">
             <h3 class="text-2xl font-semibold mb-6">Process Optimization</h3>
@@ -593,7 +593,7 @@
           </div>
         </div>
       </div>
-      <button class="btn px-10 py-5 mt-12 rounded-xl" data-aos="fade-up" data-aos-delay="500" onclick="openModal()">Request a Free Quote Now</button>
+      <button class="btn px-10 py-5 mt-16 rounded-xl" data-aos="fade-up" data-aos-delay="500" onclick="openModal()">Request a Free Quote Now</button>
     </div>
     <div class="separator"></div>
   </section>
@@ -601,9 +601,9 @@
   <!-- Results Section -->
   <section id="results" class="section">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-down">Savings We Can Create</h2>
-      <p class="text-lg mb-8 max-w-2xl mx-auto fade-in-text" data-aos="fade-down" data-aos-delay="100">Data-driven examples demonstrate our capacity to generate savings, with compensation credited only from achieved results.</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-down">Savings We Can Create</h2>
+      <p class="text-lg mb-12 max-w-2xl mx-auto fade-in-text" data-aos="fade-down" data-aos-delay="100">Data-driven examples demonstrate our capacity to generate savings, with compensation credited only from achieved results.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div class="card" data-aos="fade-right" data-aos-delay="200">
           <div class="card-content">
             <h3 class="text-2xl font-semibold mb-6">Streamlined Operations</h3>
@@ -631,18 +631,18 @@
   <!-- Savings Calculator Section -->
   <section id="savings" class="section">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-up">Estimate Your Savings</h2>
-      <p class="text-lg mb-8 max-w-2xl mx-auto fade-in-text" data-aos="fade-up" data-aos-delay="100">Project your potential savings with our advanced estimator.</p>
-      <div class="max-w-lg mx-auto card p-6 rounded-xl" data-aos="zoom-in" data-aos-delay="200">
-        <div class="card-content text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-up">Estimate Your Savings</h2>
+      <p class="text-lg mb-12 max-w-2xl mx-auto fade-in-text" data-aos="fade-up" data-aos-delay="100">Project your potential savings with our advanced estimator.</p>
+      <div class="max-w-lg mx-auto card p-10 rounded-xl" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card-content">
           <span class="savings-icon mb-6 inline-block">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#FFE87C"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-1-13h2v2h-2zm0 4h2v6h-2z"/></svg>
           </span>
-          <label class="block mb-6 text-left fade-in-text">Units Affected (e.g., employees, tasks)</label>
+          <label class="block mb-4 text-left fade-in-text">Units Affected (e.g., employees, tasks)</label>
           <input id="units" type="number" placeholder="e.g., 10" class="w-full p-4 mb-6 rounded-lg">
-          <label class="block mb-6 text-left fade-in-text">Hours Saved per Unit/Day</label>
+          <label class="block mb-4 text-left fade-in-text">Hours Saved per Unit/Day</label>
           <input id="hours" type="number" placeholder="e.g., 1" class="w-full p-4 mb-6 rounded-lg">
-          <label class="block mb-6 text-left fade-in-text">Value per Hour ($)</label>
+          <label class="block mb-4 text-left fade-in-text">Value per Hour ($)</label>
           <input id="rate" type="number" placeholder="e.g., 30" class="w-full p-4 mb-6 rounded-lg">
           <button onclick="calculateSavings()" class="btn px-10 py-5 rounded-xl w-full">Calculate Savings Now</button>
           <p id="result" class="mt-10 text-2xl font-semibold fade-in-text"></p>
@@ -655,8 +655,8 @@
   <!-- Testimonials Section (Forward-Looking) -->
   <section id="testimonials" class="section">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-down">What to Expect</h2>
-      <p class="text-lg mb-8 max-w-2xl mx-auto fade-in-text" data-aos="fade-down" data-aos-delay="100">As a new client, you’ll experience personalized service, cutting-edge analytics, and measurable savings tailored to your needs. Expect dedicated support, including free overtime when needed, to maximize your savings—without any binding contracts. Let’s build your success story together!</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-down">What to Expect</h2>
+      <p class="text-lg mb-12 max-w-2xl mx-auto fade-in-text" data-aos="fade-down" data-aos-delay="100">As a new client, you’ll experience personalized service, cutting-edge analytics, and measurable savings tailored to your needs. Expect dedicated support, including free overtime when needed, to maximize your savings—without any binding contracts. Let’s build your success story together!</p>
       <div class="card p-10 rounded-xl max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
         <div class="card-content">
           <p class="italic text-lg fade-in-text">“Looking forward to partnering with OptiThrive Solutions to unlock savings and efficiency for my business.” – Your Future Client</p>
@@ -670,9 +670,9 @@
   <!-- Tips Section -->
   <section id="tips" class="section">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-up">Efficiency Strategies</h2>
-      <p class="text-lg mb-8 max-w-2xl mx-auto fade-in-text" data-aos="fade-up" data-aos-delay="100">Unlock next-level efficiencies for your operations or residence.</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-up">Efficiency Strategies</h2>
+      <p class="text-lg mb-12 max-w-2xl mx-auto fade-in-text" data-aos="fade-up" data-aos-delay="100">Unlock next-level efficiencies for your operations or residence.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div class="card" data-aos="fade-right" data-aos-delay="200">
           <div class="card-content">
             <h3 class="text-2xl font-semibold mb-6">AI-Optimized Workflows</h3>
@@ -693,8 +693,8 @@
   <!-- About Section -->
   <section id="about" class="section">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-down">About OptiThrive Solutions</h2>
-      <p class="text-lg mb-8 max-w-2xl mx-auto fade-in-text" data-aos="fade-down" data-aos-delay="100">Founded by a Supply Chain Management graduate from URI (3.90 GPA, 2023) with a Lean Six Sigma Green Belt. At Garage Headquarters, I drove $2.2M+ in sales and optimized systems. OptiThrive Solutions now delivers AI-enhanced savings solutions with no upfront cost, credited from results. Committed to your success, OptiThrive Solutions offers free overtime support as needed to ensure results, with no binding contract required.</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-down">About OptiThrive Solutions</h2>
+      <p class="text-lg mb-12 max-w-2xl mx-auto fade-in-text" data-aos="fade-down" data-aos-delay="100">Founded by a Supply Chain Management graduate from URI (3.90 GPA, 2023) with a Lean Six Sigma Green Belt. At Garage Headquarters, I drove $2.2M+ in sales and optimized systems. OptiThrive Solutions now delivers AI-enhanced savings solutions with no upfront cost, credited from results. Committed to your success, OptiThrive Solutions offers free overtime support as needed to ensure results, with no binding contract required.</p>
       <a href="https://www.linkedin.com/in/braeden-cannon-96357b221/" target="_blank" rel="noopener noreferrer" class="inline-link text-2F4F4F font-semibold text-xl fade-in-text" data-aos="fade-up" data-aos-delay="200">Connect on LinkedIn</a>
     </div>
     <div class="separator"></div>
@@ -703,8 +703,8 @@
   <!-- Contact Section -->
   <section id="contact" class="section">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-up">Request a Quote</h2>
-      <p class="text-lg mb-8 max-w-2xl mx-auto fade-in-text" data-aos="fade-up" data-aos-delay="100">Inefficiencies impacting your resources? I’ll conduct a virtual or on-site analysis to devise a custom savings plan. No fees—compensation is results-based. Call <a href="tel:+14014511035" class="inline-link underline text-2F4F4F">(401) 451-1035</a> or use the interface below.</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-up">Request a Quote</h2>
+      <p class="text-lg mb-12 max-w-2xl mx-auto fade-in-text" data-aos="fade-up" data-aos-delay="100">Inefficiencies impacting your resources? I’ll conduct a virtual or on-site analysis to devise a custom savings plan. No fees—compensation is results-based. Call <a href="tel:+14014511035" class="inline-link underline text-2F4F4F">(401) 451-1035</a> or use the interface below.</p>
       <div class="max-w-md mx-auto" data-aos="zoom-in" data-aos-delay="200">
         <input type="text" id="contact-name" placeholder="Your Name" class="w-full p-4 mb-6 rounded-lg">
         <input type="email" id="contact-email" placeholder="Your Email" class="w-full p-4 mb-6 rounded-lg">
@@ -717,11 +717,11 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-2F4F4F py-8 text-center relative">
+  <footer class="bg-2F4F4F py-12 text-center relative">
     <div class="container mx-auto px-6">
       <span class="text-xl font-bold text-FFE87C fade-in-text">OptiThrive Solutions</span>
-      <p class="mt-4 text-white fade-in-text">Contact: <a href="tel:+14014511035" class="underline hover:text-FFE87C">(401) 451-1035</a> | <a href="mailto:optithrivesolutions@gmail.com" class="underline hover:text-FFE87C">optithrivesolutions@gmail.com</a></p>
-      <p class="mt-4 text-sm text-white fade-in-text">© 2025 OptiThrive Solutions. All rights reserved.</p>
+      <p class="mt-6 text-white fade-in-text">Contact: <a href="tel:+14014511035" class="underline hover:text-FFE87C">(401) 451-1035</a> | <a href="mailto:optithrivesolutions@gmail.com" class="underline hover:text-FFE87C">optithrivesolutions@gmail.com</a></p>
+      <p class="mt-6 text-sm text-white fade-in-text">© 2025 OptiThrive Solutions. All rights reserved.</p>
     </div>
   </footer>
 
@@ -753,7 +753,7 @@
 
     // Particle Effect (Floating Balls on Edges)
     const particleContainer = document.getElementById('particles');
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 50; i++) {
       const particleLeft = document.createElement('div');
       particleLeft.classList.add('particle-left');
       particleLeft.style.top = Math.random() * 100 + 'vh';
