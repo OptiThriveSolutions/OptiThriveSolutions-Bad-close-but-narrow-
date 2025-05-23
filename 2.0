@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OptiThrive Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Background and Edge Animation Styles */
+    body {
+      background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+      position: relative;
+      overflow-x: hidden;
+      color: #1f2937;
+    }
+    .background-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    }
+    .edge-wave {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .edge-wave::before,
+    .edge-wave::after {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+      animation: waveMove 20s linear infinite;
+    }
+    .edge-wave::before {
+      top: -50%;
+      left: -50%;
+      transform: rotate(45deg);
+    }
+    .edge-wave::after {
+      bottom: -50%;
+      right: -50%;
+      transform: rotate(-45deg);
+      animation-delay: 10s;
+    }
+    @keyframes waveMove {
+      0% { transform: translateX(-50%) rotate(45deg); }
+      100% { transform: translateX(50%) rotate(45deg); }
+    }
+    /* Existing Animation Styles */
+    @keyframes slideIn {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .slide-in { animation: slideIn 1s ease-out; }
+    .fade-in { animation: fadeIn 1.5s ease-in; }
+    .pulse { animation: pulse 2s infinite; }
+    .hover-grow:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+    .carousel-slide { display: none; }
+    .carousel-slide.active { display: block; }
+    .popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 50; }
+    .popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 40; }
+    .progress-bar { transition: width 0.5s ease; }
+    /* Custom Colors */
+    .bg-section-light { background: #ffffff; }
+    .bg-section-gradient { background: linear-gradient(to bottom, #f0f4f8, #e2e8f0); }
+    .bg-form-light { background: #f9fafb; }
+    .text-accent { color: #3b82f6; }
+    .bg-accent { background-color: #3b82f6; }
+    .border-accent { border-color: #3b82f6; }
+  </style>
+</head>
+<body>
+  <!-- Background and Edge Wave Animation -->
+  <div class="background-wrapper"></div>
+  <div class="edge-wave"></div>
+
+  <!-- Popup Overlay and Popup -->
+  <div id="popupOverlay" class="popup-overlay"></div>
+  <div id="ctaPopup" class="popup bg-section-light p-6 rounded-lg shadow-lg max-w-sm text-center">
+    <h3 class="text-xl font-bold mb-4 text-accent">Ready to Save?</h3>
+    <p class="mb-4">Request a free consultation today and start optimizing your efficiency!</p>
+    <button onclick="window.location.href='#contact'" class="bg-accent hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mr-2">Request Now</button>
+    <button onclick="closePopup()" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Close</button>
+  </div>
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 fade-in">
+    <h1 class="text-xl font-bold pulse text-accent">OptiThrive Solutions</h1>
+    <nav>
+      <ul class="flex space-x-6">
+        <li><a href="#" class="hover:text-accent hover-grow">Home</a></li>
+        <li><a href="#services" class="hover:text-accent hover-grow">Services</a></li>
+        <li><a href="#results" class="hover:text-accent hover-grow">Results</a></li>
+        <li><a href="#calculator" class="hover:text-accent hover-grow">Calculator</a></li>
+        <li><a href="#contact" class="hover:text-accent hover-grow">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col md:flex-row items-center justify-between p-10 slide-in bg-section-gradient">
+    <div class="md:w-1/2">
+      <div class="border-2 border-accent rounded-lg p-4 h-64 flex items-center justify-center">
+        <span class="text-gray-400">Image Placeholder</span>
+      </div>
+    </div>
+    <div class="md:w-1/2 mt-6 md:mt-0">
+      <h2 class="text-4xl font-bold pulse text-gray-800">Transforming Challenges into Opportunities</h2>
+      <p class="mt-4 text-lg fade-in">Struggling with inefficiencies? Our team leverages advanced analytics to unlock substantial savings for businesses, professionals, and homes with no upfront cost. A tailored plan is crafted post-consultation, credited only from the savings we generate.</p>
+      <button class="mt-6 bg-accent hover:bg-blue-500 text-white font-bold py-2 px-4 rounded hover-grow">Request a Free Consultation: (401) 451-1035</button>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="bg-section-light p-10">
+    <h2 class="text-3xl font-bold text-center slide-in text-gray-800">Our Expert Services</h2>
+    <p class="text-center mt-4 fade-in">We deliver precision-engineered solutions for any entity, utilizing cutting-edge strategies to maximize efficiency and savings. Compensation is tied solely to the results we achieve.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+      <div class="border-2 border-accent rounded-lg p-4 hover-grow">
+        <div class="h-40 flex items-center justify-center text-gray-400 slide-in">Image Placeholder</div>
+        <h3 class="text-xl font-semibold mt-4 text-gray-800">Process Optimization</h3>
+        <p class="mt-2 fade-in">Enhance workflows with AI-driven insights for businesses and homes, saving time and resources.</p>
+        <button class="mt-4 bg-accent hover:bg-blue-500 text-white py-1 px-3 rounded hover-grow">More Info</button>
+      </div>
+      <div class="border-2 border-accent rounded-lg p-4 hover-grow">
+        <div class="h-40 flex items-center justify-center text-gray-400 slide-in">Image Placeholder</div>
+        <h3 class="text-xl font-semibold mt-4 text-gray-800">Expense Reduction</h3>
+        <p class="mt-2 fade-in">Minimize costs with predictive analytics, tailored for any operation or household.</p>
+        <button class="mt-4 bg-accent hover:bg-blue-500 text-white py-1 px-3 rounded hover-grow">More Info</button>
+      </div>
+      <div class="border-2 border-accent rounded-lg p-4 hover-grow">
+        <div class="h-40 flex items-center justify-center text-gray-400 slide-in">Image Placeholder</div>
+        <h3 class="text-xl font-semibold mt-4 text-gray-800">Training & Tools</h3>
+        <p class="mt-2 fade-in">Deploy next-gen tools and training to sustain long-term efficiency gains.</p>
+        <button class="mt-4 bg-accent hover:bg-blue-500 text-white py-1 px-3 rounded hover-grow">More Info</button>
+      </div>
+    </div>
+    <div class="flex justify-center mt-6">
+      <button class="bg-accent hover:bg-blue-500 text-white font-bold py-2 px-4 rounded hover-grow">Request a Free Quote Now</button>
+    </div>
+  </section>
+
+  <!-- Testimonials Slider -->
+  <section class="p-10 bg-section-gradient">
+    <h2 class="text-3xl font-bold text-center slide-in text-gray-800">What Our Clients Say</h2>
+    <div class="relative max-w-2xl mx-auto mt-8">
+      <div id="testimonialCarousel" class="carousel">
+        <div class="carousel-slide active text-center">
+          <p class="italic fade-in">"OptiThrive transformed our operations, saving us millions!"</p>
+          <p class="mt-2 text-gray-600">– John D., CEO</p>
+        </div>
+        <div class="carousel-slide text-center">
+          <p class="italic fade-in">"Their analytics cut our expenses by 30% in just months."</p>
+          <p class="mt-2 text-gray-600">– Sarah K., CFO</p>
+        </div>
+        <div class="carousel-slide text-center">
+          <p class="italic fade-in">"A game-changer for our home efficiency."</p>
+          <p class="mt-2 text-gray-600">– Emily R., Homeowner</p>
+        </div>
+      </div>
+      <button onclick="prevSlide()" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-accent hover:bg-blue-500 text-white p-2 rounded-full">←</button>
+      <button onclick="nextSlide()" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-accent hover:bg-blue-500 text-white p-2 rounded-full">→</button>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section id="results" class="p-10 bg-section-light">
+    <h2 class="text-3xl font-bold text-center slide-in text-gray-800">Savings We Can Create</h2>
+    <p class="text-center mt-4 fade-in">Data-driven examples demonstrate our capacity to generate savings, with compensation credited only from achieved results.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+      <div class="fade-in">
+        <h3 class="text-xl font-semibold text-gray-800">Streamlined Operations</h3>
+        <p class="mt-2">Businesses save millions annually via optimized processes, tracked with real-time analytics.</p>
+      </div>
+      <div class="fade-in delay-200">
+        <h3 class="text-xl font-semibold text-gray-800">Reduced Expenses</h3>
+        <p class="mt-2">Professionals cut costs with AI forecasts, measured via financial dashboards.</p>
+      </div>
+      <div class="fade-in delay-400">
+        <h3 class="text-xl font-semibold text-gray-800">Home Efficiency</h3>
+        <p class="mt-2">Homeowners reduce utility bills with smart systems, monitored via IoT integrations.</p>
+      </div>
+    </div>
+    <div class="flex justify-center mt-6">
+      <button class="bg-accent hover:bg-blue-500 text-white font-bold py-2 px-4 rounded hover-grow">Be the first to transform your savings – let’s get started!</button>
+    </div>
+  </section>
+
+  <!-- Calculator Section -->
+  <section id="calculator" class="p-10 bg-section-gradient">
+    <h2 class="text-3xl font-bold text-center slide-in text-gray-800">Estimate Your Savings</h2>
+    <p class="text-center mt-4 fade-in">Project your potential savings with our advanced estimator.</p>
+    <div class="max-w-md mx-auto mt-8 p-6 bg-form-light rounded-lg slide-in">
+      <input type="number" id="units" placeholder="Units Affected (e.g., employees, tasks)" class="w-full p-2 mb-4 bg-gray-200 rounded pulse">
+      <input type="number" id="hours" placeholder="Hours Saved per Unit/Day" class="w-full p-2 mb-4 bg-gray-200 rounded pulse">
+      <input type="number" id="value" placeholder="Value per Hour ($)" class="w-full p-2 mb-4 bg-gray-200 rounded pulse">
+      <button onclick="calculateSavings()" class="w-full bg-accent hover:bg-blue-500 text-white font-bold py-2 rounded hover-grow">Calculate Savings Now</button>
+      <div class="mt-4">
+        <p id="savingsResult" class="text-center"></p>
+        <div class="w-full bg-gray-300 rounded h-4 mt-2">
+          <div id="progressBar" class="bg-accent h-4 rounded progress-bar" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to Expect Section -->
+  <section class="p-10 bg-section-light">
+    <h2 class="text-3xl font-bold text-center slide-in text-gray-800">What to Expect</h2>
+    <p class="text-center mt-4 fade-in">As a new client, you’ll experience personalized service, cutting-edge analytics, and measurable savings tailored to your needs. Expect dedicated support, including free overtime when needed, to maximize your savings—without any binding contracts. Let’s build your success story together!</p>
+    <blockquote class="text-center mt-6 italic fade-in">“Looking forward to partnering with OptiThrive Solutions to unlock savings and efficiency for my business.” – Your Future Client</blockquote>
+    <div class="flex justify-center mt-6">
+      <button class="bg-accent hover:bg-blue-500 text-white font-bold py-2 px-4 rounded hover-grow">Be among the first to experience transformative savings – request your quote today!</button>
+    </div>
+  </section>
+
+  <!-- Efficiency Strategies Section -->
+  <section class="p-10 bg-section-gradient">
+    <h2 class="text-3xl font-bold text-center slide-in text-gray-800">Efficiency Strategies</h2>
+    <p class="text-center mt-4 fade-in">Unlock next-level efficiencies for your operations or residence.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+      <div class="fade-in">
+        <h3 class="text-xl font-semibold text-gray-800">AI-Optimized Workflows</h3>
+        <p class="mt-2">Leverage AI to streamline processes. Get a free quote to begin.</p>
+      </div>
+      <div class="fade-in delay-200">
+        <h3 class="text-xl font-semibold text-gray-800">Cost-Saving Innovations</h3>
+        <p class="mt-2">Adopt smart tech for savings. Request a consultation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog/Insights Section -->
+  <section class="p-10 bg-section-light">
+    <h2 class="text-3xl font-bold text-center slide-in text-gray-800">Insights & Case Studies</h2>
+    <p class="text-center mt-4 fade-in">Explore our latest articles and success stories on efficiency and savings.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+      <div class="border-2 border-accent rounded-lg p-4 hover-grow">
+        <h3 class="text-xl font-semibold text-gray-800">Maximizing ROI with AI</h3>
+        <p class="mt-2 fade-in">Learn how AI-driven analytics can boost your business efficiency.</p>
+        <a href="#" class="mt-4 inline-block text-accent hover:underline">Read More</a>
+      </div>
+      <div class="border-2 border-accent rounded-lg p-4 hover-grow">
+        <h3 class="text-xl font-semibold text-gray-800">Case Study: 30% Cost Reduction</h3>
+        <p class="mt-2 fade-in">A client’s journey to significant savings with OptiThrive.</p>
+        <a href="#" class="mt-4 inline-block text-accent hover:underline">Read More</a>
+      </div>
+      <div class="border-2 border-accent rounded-lg p-4 hover-grow">
+        <h3 class="text-xl font-semibold text-gray-800">Smart Home Efficiency Tips</h3>
+        <p class="mt-2 fade-in">Top strategies for reducing utility bills with smart tech.</p>
+        <a href="#" class="mt-4 inline-block text-accent hover:underline">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="p-10 flex flex-col md:flex-row items-center bg-section-gradient">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold slide-in text-gray-800">About OptiThrive Solutions</h2>
+      <p class="mt-4 fade-in">Founded by a Supply Chain Management graduate from URI (3.90 GPA, 2023) with a Lean Six Sigma Green Belt. At Garage Headquarters, I drove $2.2M+ in sales and optimized systems. OptiThrive Solutions now delivers AI-enhanced savings solutions with no upfront cost, credited from results. Committed to your success, OptiThrive Solutions offers free overtime support as needed to ensure results, with no binding contract required.</p>
+      <button class="mt-4 bg-accent hover:bg-blue-500 text-white font-bold py-2 px-4 rounded hover-grow">Connect on LinkedIn</button>
+    </div>
+    <div class="md:w-1/2 mt-6 md:mt-0">
+      <div class="border-2 border-accent rounded-lg p-4 h-64 flex items-center justify-center slide-in">
+        <span class="text-gray-400">Image Placeholder</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="p-10 bg-section-light">
+    <h2 class="text-3xl font-bold text-center slide-in text-gray-800">Request a Quote</h2>
+    <p class="text-center mt-4 fade-in">Inefficiencies impacting your resources? I’ll conduct a virtual or on-site analysis to devise a custom savings plan. No fees—compensation is results-based. Call (401) 451-1035 or use the interface below.</p>
+    <div class="max-w-md mx-auto mt-8 p-6 bg-form-light rounded-lg slide-in">
+      <form id="contactForm" onsubmit="return validateForm(event)">
+        <input type="text" id="name" placeholder="Name" class="w-full p-2 mb-4 bg-gray-200 rounded pulse">
+        <p id="nameError" class="text-red-400 text-sm hidden">Please enter your name.</p>
+        <input type="email" id="email" placeholder="Email" class="w-full p-2 mb-4 bg-gray-200 rounded pulse">
+        <p id="emailError" class="text-red-400 text-sm hidden">Please enter a valid email.</p>
+        <input type="tel" id="phone" placeholder="Phone" class="w-full p-2 mb-4 bg-gray-200 rounded pulse">
+        <p id="phoneError" class="text-red-400 text-sm hidden">Please enter a valid phone number.</p>
+        <textarea id="message" placeholder="Message" class="w-full p-2 mb-4 bg-gray-200 rounded pulse" rows="4"></textarea>
+        <p id="messageError" class="text-red-400 text-sm hidden">Please enter a message.</p>
+        <button type="submit" class="w-full bg-accent hover:bg-blue-500 text-white font-bold py-2 rounded hover-grow">Request Free Quote Today</button>
+      </form>
+    </div>
+    <p class="text-center mt-4 fade-in">Or email <a href="mailto:optithrivesolutions@gmail.com" class="text-accent hover-grow">optithrivesolutions@gmail.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <section class="p-6 text-center bg-section-gradient">
+    <div class="flex justify-center space-x-4 mb-4">
+      <a href="#" class="text-accent hover-grow">LinkedIn: 5k+ Followers</a>
+      <a href="#" class="text-accent hover-grow">Twitter: 3k+ Followers</a>
+    </div>
+    <p class="fade-in">OptiThrive Solutions<br>Contact: (401) 451-1035 | <a href="mailto:optithrivesolutions@gmail.com" class="text-accent hover-grow">optithrivesolutions@gmail.com</a></p>
+    <p class="mt-2">© 2025 OptiThrive Solutions. All rights reserved.</p>
+  </section>
+
+  <script>
+    // Testimonial Carousel
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+    setInterval(nextSlide, 5000);
+
+    // Popup Logic
+    function showPopup() {
+      document.getElementById('ctaPopup').style.display = 'block';
+      document.getElementById('popupOverlay').style.display = 'block';
+    }
+    function closePopup() {
+      document.getElementById('ctaPopup').style.display = 'none';
+      document.getElementById('popupOverlay').style.display = 'none';
+    }
+    setTimeout(showPopup, 10000);
+
+    // Savings Calculator
+    function calculateSavings() {
+      const units = parseFloat(document.getElementById('units').value) || 0;
+      const hours = parseFloat(document.getElementById('hours').value) || 0;
+      const value = parseFloat(document.getElementById('value').value) || 0;
+      const savings = units * hours * value * 30;
+      const maxSavings = 100000;
+      const percentage = Math.min((savings / maxSavings) * 100, 100);
+      document.getElementById('savingsResult').textContent = `Estimated Monthly Savings: $${savings.toFixed(2)}`;
+      document.getElementById('progressBar').style.width = `${percentage}%`;
+    }
+
+    // Form Validation
+    function validateForm(event) {
+      event.preventDefault();
+      let isValid = true;
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      document.getElementById('nameError').classList.add('hidden');
+      document.getElementById('emailError').classList.add('hidden');
+      document.getElementById('phoneError').classList.add('hidden');
+      document.getElementById('messageError').classList.add('hidden');
+
+      if (!name) {
+        document.getElementById('nameError').classList.remove('hidden');
+        isValid = false;
+      }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        document.getElementById('emailError').classList.remove('hidden');
+        isValid = false;
+      }
+      if (!phone || !/^\d{10,}$/.test(phone 
