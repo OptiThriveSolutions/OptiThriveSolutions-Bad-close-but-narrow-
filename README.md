@@ -1,3 +1,43 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -623,7 +663,7 @@
         <textarea id="contact-message" placeholder="Describe your challenges" class="w-full p-4 mb-5 rounded-lg" rows="4"></textarea>
         <button class="btn px-10 py-5 rounded-xl w-full" onclick="openModal()">Request Free Quote Today</button>
       </div>
-      <p class="mt-10 text-lg fade-in-text" data-aos="fade-up" data-aos-delay="300">Or email <a href="/cdn-cgi/l/email-protection#400f303429142832293625132f2c3534292f2e3300272d21292c6e232f2d" class="inline-link underline text-2F4F4F"><span class="__cf_email__" data-cfemail="2b645b5f427f4359425d4e7844475e5f424445586b4c464a424705484446">[email&#160;protected]</span></a></p>
+      <p class="mt-10 text-lg fade-in-text" data-aos="fade-up" data-aos-delay="300">Or email <a href="mailto:OptiThriveSolutions@gmail.com" class="inline-link underline text-2F4F4F">OptiThriveSolutions@gmail.com</a></p>
     </div>
     <div class="separator"></div>
   </section>
@@ -632,7 +672,7 @@
   <footer class="bg-2F4F4F py-8 text-center relative">
     <div class="container mx-auto px-6">
       <span class="text-xl font-bold text-FFE87C fade-in-text">OptiThrive Solutions</span>
-      <p class="mt-4 text-white fade-in-text">Contact: <a href="tel:+14014511035" class="underline hover:text-FFE87C">(401) 451-1035</a> | <a href="/cdn-cgi/l/email-protection#fab58a8e93ae9288938c9fa995968f8e93959489ba9d979b9396d4999597" class="underline hover:text-FFE87C"><span class="__cf_email__" data-cfemail="377847435e635f455e415264585b42435e58594477505a565e5b1954585a">[email&#160;protected]</span></a></p>
+      <p class="mt-4 text-white fade-in-text">Contact: <a href="tel:+14014511035" class="underline hover:text-FFE87C">(401) 451-1035</a> | <a href="mailto:OptiThriveSolutions@gmail.com" class="underline hover:text-FFE87C">OptiThriveSolutions@gmail.com</a></p>
       <p class="mt-4 text-sm text-white fade-in-text">© 2025 OptiThrive Solutions. All rights reserved.</p>
     </div>
   </footer>
@@ -650,7 +690,7 @@
   </div>
 
   <!-- AOS and Custom Scripts -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     // Initialize AOS
     AOS.init({
@@ -759,5 +799,5 @@
     }, observerOptions);
     sectionTitles.forEach(title => observer.observe(title));
   </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9448a6986e8f8f84',t:'MTc0ODA0NjI3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
